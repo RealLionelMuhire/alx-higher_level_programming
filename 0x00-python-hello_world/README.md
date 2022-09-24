@@ -1,1 +1,1 @@
-This contains initial learnings of python
+This is README.md file for Hello world!
