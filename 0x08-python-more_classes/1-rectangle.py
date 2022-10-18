@@ -1,9 +1,10 @@
 #!/usr/bin/python3
+"""Defining a rectangle class."""
+
 
 class Rectangle:
-    """Defining a rectangle class."""
-    
-    
+    """Represent a rectangle."""
+
     def __init__(self, width = 0, height = 0):
         """initializing a rectangle.
     
@@ -13,8 +14,10 @@ class Rectangle:
         """
         self.width = width
         self.height = height
+
     @property
     def width(self):
+        """Get/Set the width of the rectangle."""
         return __width
 
     @width.setter
@@ -24,9 +27,12 @@ class Rectangle:
         if value < 0:
             raise ValueError("width must be >= 0")
         self.__width = value
+
     @property
     def height(self):
+        """Get/set the height of the rectangle."""
         return __height
+
     @height.setter
     def height(self, value):
         if not isinstance(value, int):
