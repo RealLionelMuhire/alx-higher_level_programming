@@ -1,13 +1,2 @@
 #!/bin/bash
-
-# Get the Python file name from the environment variable
-pyfile=$PYFILE
-
-# Generate the output filename by appending 'c' to the Python file name
-output="${pyfile}c"
-
-# Compile the Python script
-python -m py_compile $pyfile
-
-# Rename the compiled file to the output filename
-mv "${pyfile}c" $output
+python3 -m compileall -b $PYFILE
