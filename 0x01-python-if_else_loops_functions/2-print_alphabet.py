@@ -1,3 +1,3 @@
 #!/usr/bin/python3
-import string
-print(''.join([c for c in string.ascii_lowercase]).format(), end='')
+for letter in range(97, 122):
+    print("{}".format(chr(letter)), end=" ")
