@@ -1,3 +1,3 @@
 #!/usr/bin/python3
 import string
-print(''.join(chr(x) for x in range(97, 123)), end='')
+print(''.join([c for c in string.ascii_lowercase]).format(), end='')
