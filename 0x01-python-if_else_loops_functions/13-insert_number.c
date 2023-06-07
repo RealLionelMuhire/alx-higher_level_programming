@@ -2,9 +2,8 @@
 
 /**
  * insert_nodeint_at_index - inserts a new node at a given position
- * @n: data for inserted node
  * @head: head node of linked list
- * @idx: index place
+ * @number: index place
  * Return: added node otherwise NULL
  */
 
