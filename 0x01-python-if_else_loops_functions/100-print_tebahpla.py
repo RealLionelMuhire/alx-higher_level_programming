@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-m = 1
+m = 0
 for p in range(90, 64, -1):
     if m % 2 == 0:
         alpha = chr(p + 32)
