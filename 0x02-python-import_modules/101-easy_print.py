@@ -1,2 +1,2 @@
 #!/usr/bin/python3
-import cheat_checker
+import print_easy
