@@ -5,3 +5,4 @@ def no_c(my_string):
         if char != "c" and char != "C":
             n_str += char
     return n_str
+power
