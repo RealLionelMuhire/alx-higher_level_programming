@@ -5,8 +5,8 @@ def print_matrix_integer(matrix=[[]]):
             if item.index(subitem) < len(item) - 1:
                 print("{:d}".format(subitem), end=" ")
             else:
-                print("{:d}".format(subitem))
-    print()
+                print("{:d}".format(subitem), end="")
+        print()
 
 
 matrix = [
