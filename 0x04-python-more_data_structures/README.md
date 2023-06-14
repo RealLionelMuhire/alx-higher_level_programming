@@ -1,0 +1,1 @@
+This is folder containing python excercises on lambda map filter
