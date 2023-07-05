@@ -66,3 +66,9 @@ class Rectangle:
             recta += "\n"
             unit += 1
         return recta
+
+    def __repr__(self):
+        """Return the official string representation of a rectangle
+        This can be used to recreate it"""
+
+        return f"Rectangle({self.width}, {self.height})"
