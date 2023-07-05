@@ -72,7 +72,7 @@ class Rectangle:
         This can be used to recreate it"""
 
         return f"Rectangle({self.width}, {self.height})"
-    
+ 
     def __del__(self):
         """Detect object deletion"""
         print("Bye rectangle...")
