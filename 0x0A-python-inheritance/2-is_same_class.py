@@ -9,4 +9,4 @@ def is_same_class(obj, a_class):
         a_class
     Return: a bollean
     """
-    return issubclass(obj, a_class)
+    return isinstance(obj, a_class)
