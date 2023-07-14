@@ -11,6 +11,5 @@ try:
     exist_data = load_from_json('add_item.json')
 except FileNotFoundError:
     exist_data = []
-
 exist_data.extend(args)
 save_to_json(exist_data, 'add_item.json')
