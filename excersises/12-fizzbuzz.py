@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+from docstring_generator import generate_docstring
+
+
 def fizzbuzz():
     for n in range(1, 101):
         if n % 3 == 0 and n % 5 == 0:
@@ -10,6 +13,6 @@ def fizzbuzz():
         else:
             print("{}".format(n), end=' ')
 
-if __name__ == "__main__":
-    import doctest
-    doctest.testmod()
+
+docstr = generate_docstring(fizzbuzz)
+print(docstr)
