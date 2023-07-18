@@ -22,5 +22,6 @@ class Test_list(unittest.TestCase):
         list = [1]
         self.assertTrue(is_sorted(list), "! element and is sorted")
 
-unittest.main()
+if __name__ == "__main__":
+    unittest.main()
 
