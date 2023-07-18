@@ -40,7 +40,7 @@ class TestMyclass(unittest.TestCase):
 
     def test_school(self):
         #test getter and setter for school
-        self.assertEqual(self.test_obj.school, "ALX")
+        self.assertEqual(self.test_obj.school, "CMHS")
         
         new_school = "ALX_SE"
         self.test_obj.school = new_school
@@ -48,7 +48,7 @@ class TestMyclass(unittest.TestCase):
 
     def test_user_id(self):
         #test getter and setter for user_id
-        self.assertEqual(self.test_obj.user_id, "19737")
+        self.assertEqual(self.test_obj.user_id, "218008609")
 
         new_user_id = "00001"
         self.test_obj.user_id = new_user_id

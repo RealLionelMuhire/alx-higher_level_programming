@@ -45,9 +45,11 @@ class Myclass:
 
 
 my_obj = Myclass("Lionel", "218008609", "CHMS")
+my_obj.username = "Sylvie"
+my_obj.user_id = "2000"
+my_obj.school = "CST"
 
 
-my_obj_str = my_obj.to_json_file("My_Obj.json")
-
+my_obj.to_json_file("My_Obj.json")
 from_json_obj = Myclass.from_json_file("My_Obj.json")
 print(from_json_obj)
