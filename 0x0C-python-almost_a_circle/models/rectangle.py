@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-from base import Base
+from models.base import Base
 """Rectangle class with its attributes"""
 
 
@@ -81,27 +81,69 @@ class Rectangle(Base):
         elif value < 0:
             raise ValueError("y must be >= 0")
         self.__y = value
-    
+
     def area(self):
         return self.__width * self.__height
 
     def display(self):
         i = 0
-        for i in range(self.__height):
+        for i in range(self.__height + self.__y):
             j = 0
-            for j in range(self.__width):
-                print("#", end="")
-            print()
+            if i in range(self.__y):
+                print()
+            else:
+                for j in range(self.__width + self.__x):
+                    if j in range(self.__x):
+                        print(" ", end='')
+                    else:
+                        print("#", end="")
+                print()
+
+    def __str__(self):
+        """returns strings that display rectangle"""
+        str = f"[Rectangle] ({self.id}) {self.x}/{self.y} - {self.width}/\
+{self.height}"
+        return str
+
+    def update(self, *args, **kwargs):
+        if not args or len(args) == 0:
+            for key, value in kwargs.items():
+                if key == "id":
+                    self.id = value
+                elif key == "width":
+                    self.width = value
+                elif key == "height":
+                    self.height = value
+                elif key == "x":
+                    self.x = value
+                elif key == "y":
+                    self.y = value
+        else:
+            try:
+                self.id = args[0]
+                self.width = args[1]
+                self.height = args[2]
+                self.x = args[3]
+                self.y = args[4]
+            except IndexError:
+                pass
+ 
+    def to_dictionary(self):
+        """rectangle dictionalry items"""
+        return {
+                'id': self.id,
+                'width': self.width,
+                'height': self.__height,
+                'x': self.x,
+                'y': self.y
+                }
 
 
 if __name__ == "__main__":
 
-    r1 = Rectangle(4, 6)
-    r1.display()
+    r1 = Rectangle(10, 7, 2, 8)
+    r2 = Rectangle(2, 4)
+    Rectangle.save_to_file([r1, r2])
 
-    print("---")
-
-    r1 = Rectangle(2, 2)
-    r1.display()
-
-
+    with open("Rectangle.json", "r") as file:
+        print(file.read())
