@@ -1,4 +1,4 @@
 -- calfonians cities
-SELECT id, names FROM cities
-WHERE state_id IN (SELECT id FROM states WHERE name = 'Calfornia')
+SELECT id, name FROM cities
+WHERE state_id IN (SELECT id FROM states WHERE name = 'California')
 ORDER BY id ASC;
