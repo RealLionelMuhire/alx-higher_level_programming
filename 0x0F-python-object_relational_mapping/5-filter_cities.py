@@ -8,7 +8,7 @@ from MySQLdb import Error
 from sys import argv, exit, stderr
 
 
-HELP = '{} username password database'.format(argv[0])
+HELP = '{} username password database search'.format(argv[0])
 HOST = 'localhost'
 PORT = 3306
 
@@ -22,6 +22,7 @@ if __name__ == '__main__':
             'host': HOST,
             'port': PORT,
         }
+        search = argv[4]
     except IndexError:
         stderr.write('usage: {}\n'.format(HELP))
         exit(2)
@@ -31,11 +32,11 @@ if __name__ == '__main__':
         stderr.write('{}\n'.format(e.args[1]))
         exit(1)
     query = """
-    SELECT c.id, c.name, s.name
+    SELECT c.name
     FROM cities c, states s
     WHERE c.state_id = s.id
+    AND s.name = %s
     ORDER BY c.id;
     """
-    results = mysqlman.query([query, ()])
-    for row in results[0]:
-        print(row)
+    results = mysqlman.query([query, (search,)])
+    print(', '.join(row[0] for row in results[0]))
